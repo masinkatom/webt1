@@ -1,0 +1,448 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --webte-color-blue: #0C75A8;
+    --webte-color-orange: #AD5F00;
+    --webte-color-ltBlue: #9EDFFF;
+    --webte-color-ltOrange: #F59520;
+    font-size: 10px;
+}
+
+@font-face {
+    font-family: 'Arbutus-Regular';
+    src: url('../font/Arbutus-Regular.ttf') format('truetype');
+}
+
+p {
+    font-size: 1.6rem;
+
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Arbutus-Regular', 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, rgba(255, 178, 77, 0.568) 0%, rgba(0, 119, 255, 0.356) 100%)
+}
+
+.container {
+    animation: pageload 1s;
+    width: 100%;
+    max-width: 120rem;
+    /* aby neprekrocil tuto hodnotu */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 178, 77, 0.568) 0%, rgba(0, 119, 255, 0.356) 100%), url("../pictures/20220911_185106.jpg") center no-repeat fixed;
+    background-size: cover;
+    transform: translate(0%, 0%);
+}
+
+.header h1,
+.header h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.other {
+    height: 20vh;
+}
+
+.main-nav-liner {
+    display: none;
+}
+
+.main-nav {
+    background-color: var(--webte-color-blue);
+    width: 100%;
+    height: 5rem;
+    position: sticky;
+    top: -1px;
+    z-index: 3;
+}
+
+.list-nav {
+    height: 5rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    list-style: none;
+    text-align: center;
+    list-style-type: none;
+}
+
+.list-nav li {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.list-nav li:hover {
+    background-color: var(--webte-color-ltOrange);
+    transition: all 500ms ease;
+}
+
+
+.list-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.list-nav a.active {
+    border-bottom: 5px solid var(--webte-color-ltOrange);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/*content*/
+
+.content-box {
+    padding: 1rem 0rem;
+    position: relative;
+    width: 50%;
+}
+
+.content-box::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: white;
+    border: 4px solid var(--webte-color-orange);
+    top: 50%;
+    border-radius: 25%;
+    z-index: 1;
+}
+
+.left {
+    padding-right: 4rem;
+    left: 0;
+}
+
+.right {
+    padding-left: 4rem;
+    left: 50%;
+}
+
+.right::after {
+    left: -13px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+aside {
+    width: 40%;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px var(--webte-color-orange);
+    font-style: italic;
+    color: var(--webte-color-blue);
+}
+
+aside p {
+    margin: 1rem;
+    font-size: 2.3rem;
+}
+
+
+
+/* The actual timeline (the vertical ruler) */
+.line {
+    position: relative;
+    margin: 0 auto;
+    /*mid*/
+}
+
+/* The actual timeline (the vertical ruler) */
+.line::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 100%;
+}
+
+footer {
+    padding: 2.5rem 2rem;
+    background: var(--webte-color-blue);
+    text-align: center;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.795);
+}
+
+/* TIMETABLE PAGE */
+.scroll {
+    overflow-x: auto;
+    margin-bottom: 11vh;
+    margin-top: 3rem;
+}
+
+.timetable {
+    background-color: white;
+    border: 2px solid var(--webte-color-ltOrange);
+    width: 100%;
+    height: 50rem;
+    font-size: 1.8rem;
+    
+}
+
+tr, th, td {
+    border: 1px solid var(--webte-color-ltOrange);
+    text-align: center;
+    
+}
+
+td, th {
+    padding: .5rem;
+}
+
+tr:nth-of-type(odd){background-color: #f5952013}
+
+
+td p {
+    padding: 0;
+    margin: 0;
+    background: white;
+    font-size: 2.2rem;
+}
+
+.tmPR {
+    background: repeating-linear-gradient(45deg, 
+    var(--webte-color-ltOrange),
+    var(--webte-color-ltOrange) 7px,
+    var(--webte-color-orange) 7px,
+    var(--webte-color-orange) 14px);
+    font-size: 2.5rem
+}
+
+.tmCV {
+    background: repeating-linear-gradient(45deg, 
+    var(--webte-color-ltBlue),
+    var(--webte-color-ltBlue) 7px,
+    var(--webte-color-blue) 7px,
+    var(--webte-color-blue) 14px);
+    font-size: 2.5rem
+}
+
+#tmtblPR {
+    display: block;
+    height: 50%;
+    background: repeating-linear-gradient(45deg, 
+    var(--webte-color-ltOrange),
+    var(--webte-color-ltOrange) 7px,
+    var(--webte-color-orange) 7px,
+    var(--webte-color-orange) 14px);
+    color: white;
+    font-size: 1.8rem;
+    text-align: right;
+}
+
+#tmtblCV {
+    background: repeating-linear-gradient(45deg, 
+    var(--webte-color-ltBlue),
+    var(--webte-color-ltBlue) 7px,
+    var(--webte-color-blue) 7px,
+    var(--webte-color-blue) 14px);
+    color: white;
+    font-size: 1.8rem;
+    text-align: right;
+}
+
+.day {
+    text-transform:capitalize;
+    text-align: right;
+}
+
+
+/*@media sizing*/
+@media screen and (max-width: 700px) {
+    :root {
+        font-size: 8px;
+    }
+
+    .main-nav-liner {
+        display: none;
+        position: sticky;
+        top: 0;
+        height: 6rem;
+        background: black;
+        z-index: 3;
+    }
+
+    .main-nav {
+        background-color: black;
+        height: 19rem;
+
+    }
+
+    .main-nav .container {
+        height: 100%;
+    }
+
+    .list-nav {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .list-nav li {
+        padding: .5rem .5rem;
+        z-index: 4;
+    }
+
+    .list-nav a {
+        font-size: 2.3rem;
+        margin-bottom: 5px;
+    }
+
+    /* Place the timelime to the left */
+    .line::after {
+        left: 31px;
+    }
+
+    .nav-toggle-label {
+        cursor: pointer;
+        position: sticky;
+        float: left;
+        top: 19rem;
+        left: 0;
+        z-index: 3;
+        margin-left: 1rem;
+        color: var(--webte-color-ltBlue);
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        transform: translateY(-19rem);
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: white;
+        height: 2.5px;
+        width: 3rem;
+        border-radius: 2px;
+        position: relative;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .nav-toggle-label span::before {
+        bottom: 7px;
+    }
+
+    .nav-toggle-label span::after {
+        top: 7px;
+    }
+
+    .nav-toggle:checked~.main-nav {
+        display: none;
+    }
+
+    .nav-toggle:checked~.nav-toggle-label {
+        top: 6rem;
+        transform: translateY(-6rem);
+    }
+
+    .nav-toggle:checked~.main-nav-liner {
+        display: flex;
+    }
+
+    /* Full-width containers */
+    .content-box {
+        width: 100%;
+        padding-left: 7rem;
+        padding-right: 2rem;
+    }
+
+
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+        left: 18px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    :root {
+        font-size: 7px;
+    }
+
+    .header h1,
+    .header h2 {
+        justify-content: left;
+    }
+}
+
+
+/*animations*/
+@keyframes pageload {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
