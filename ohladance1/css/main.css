@@ -597,6 +597,11 @@ td p {
     }
 
 }
+@media screen and (max-width: 450px) {
+    .picture {
+        height: 30rem;
+    }
+}
 
 @media screen and (max-width: 350px) {
     :root {
@@ -609,6 +614,9 @@ td p {
     .header h1,
     .header h2 {
         justify-content: left;
+    }
+    .picture {
+        height: 20rem;
     }
 }
 
