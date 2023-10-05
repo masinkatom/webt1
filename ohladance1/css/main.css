@@ -7,7 +7,7 @@
 :root {
     --webte-color-blue: #0C75A8;
     --webte-color-orange: #AD5F00;
-    --webte-color-ltBlue: #9EDFFF;
+    --webte-color-ltBlue: #8fd2ff;
     --webte-color-ltOrange: #F59520;
     font-size: 10px;
 }
@@ -19,7 +19,7 @@
 
 p {
     font-size: 1.6rem;
-
+    margin: .7rem 0;
 }
 
 h1 {
@@ -27,7 +27,12 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin: .7rem 0;
 }
 
 img {
@@ -172,10 +177,29 @@ body {
     border-radius: 6px;
 }
 
+.picture {
+    border-radius: 5%;
+    overflow: hidden;
+    height: 40rem;
+}
+
+#slanske {
+    transform: translateY(-15%);
+}
+
+#bvlgaria {
+    transform: translateY(-25%);
+}
+
+#rakusko {
+    
+    transform: translateY(-20%);
+}
+
 aside {
     width: 40%;
-    padding-left: 0.5rem;
-    margin-left: 0.5rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
     float: right;
     box-shadow: inset 5px 0 5px -5px var(--webte-color-orange);
     font-style: italic;
@@ -185,6 +209,10 @@ aside {
 aside p {
     margin: 1rem;
     font-size: 2.3rem;
+}
+
+.my-stuff {
+    font-size: 1.8rem;
 }
 
 
@@ -210,6 +238,7 @@ aside p {
 }
 
 footer {
+    margin-top: 2rem;
     padding: 2.5rem 2rem;
     background: var(--webte-color-blue);
     text-align: center;
@@ -217,7 +246,7 @@ footer {
     color: rgba(255, 255, 255, 0.795);
 }
 
-/* TIMETABLE PAGE */
+/* TIMETABLE PAGE -------------------------------------*/
 .scroll {
     overflow-x: auto;
     margin-bottom: 11vh;
@@ -301,8 +330,142 @@ td p {
 }
 
 
+/* CV Page -------------------------------------*/ 
+.cvAdjust {
+    display: flex;
+    margin: 3rem 0;
+    flex-direction: row;
+    width: 100%;
+    flex-direction: row;
+}
+
+.cvLeft {
+    display: flex;
+    background: white;
+    float: left;
+    width: 40rem;
+    padding: 2rem 2rem;
+    flex-direction: column;
+}
+
+.cvRight {
+    display: flex;
+    background: var(--webte-color-ltOrange);
+    float: right;
+    width: 100%;
+    padding: 2rem 2rem;
+    flex-direction: column;
+}
+
+.cvContent {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.cvmyPhoto {
+    width: 25rem;
+    border-radius: 50rem;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 7rem;
+    margin-left: 1rem;
+}
+
+.cvLeft h3{
+    color: var(--webte-color-orange);
+}
+
+.cvRight h3 {
+    color: white;
+}
+
+.cvAdjust li{
+    font-size: 1.7rem;
+}
+
+/* Image PAGE -------------------------------------------*/
+
+.image-container {
+    margin-top: 3rem;
+    position: relative;
+    display: block;
+    
+}
+
+.textPopup {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    bottom: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translate(-50%, 50%);
+    transition: 1s ease;
+}
+
+.hoverME:hover .textPopup {
+    display: block;
+}
+
+.hoverME {
+    width: 40px;
+    height: 40px;
+    background-color: var(--webte-color-ltBlue);
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.rear-jackman {
+    left: 8%;
+    bottom: 65%;
+}
+
+.front-wing {
+    left: 86%;
+    bottom: 39%;
+}
+
+.gunner {
+    left: 25%;
+    bottom: 22%;
+}
+
+.stabiliser {
+    left: 45%;
+    bottom: 30%;
+}
+
+.wheel-off {
+    left: 35%;
+    bottom: 80%;
+}
+
+.wheel-on {
+    left: 63%;
+    bottom: 70%;
+}
+
+.gasly {
+    background-color: #0c74a800;
+    cursor: pointer;
+    left: 49%;
+    bottom: 55%;
+}
+
+.image-container a {
+    text-align: center;
+    text-decoration: none;
+}
+
 /*@media sizing*/
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
     :root {
         font-size: 8px;
     }
@@ -422,9 +585,25 @@ td p {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .cvAdjust {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cvLeft {
+        width: 100%;
+    }
+
+}
+
 @media screen and (max-width: 350px) {
     :root {
         font-size: 7px;
+    }
+    .cvmyPhoto {
+        width: 17rem;
     }
 
     .header h1,
